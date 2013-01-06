@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201301061944009_UniqueConstraintOnNameParentId.Designer.cs">
       <DependentUpon>201301061944009_UniqueConstraintOnNameParentId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201301062338589_LongUrlRequired.cs" />
+    <Compile Include="Migrations\201301062338589_LongUrlRequired.Designer.cs">
+      <DependentUpon>201301062338589_LongUrlRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqrlContext.cs" />
@@ -89,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201301061944009_UniqueConstraintOnNameParentId.resx">
       <DependentUpon>201301061944009_UniqueConstraintOnNameParentId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201301062338589_LongUrlRequired.resx">
+      <DependentUpon>201301062338589_LongUrlRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

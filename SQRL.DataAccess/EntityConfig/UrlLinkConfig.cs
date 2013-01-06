@@ -13,6 +13,7 @@ namespace SQRL.DataAccess.EntityConfig
 			Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
 			Property(p => p.LongUrl).HasMaxLength(512);
 			Property(p => p.Name).IsRequired().HasMaxLength(100);
+			Property(p => p.LongUrl).IsRequired();
 		}
 	}
 }

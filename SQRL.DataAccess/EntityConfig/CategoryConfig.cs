@@ -8,6 +8,7 @@ namespace SQRL.DataAccess.EntityConfig
 		public CategoryConfig()
 		{
 			Property(p => p.Name).IsRequired().HasMaxLength(100);
+			Property(p => p.LongUrlFormatString).HasMaxLength(512);
 		}
 	}
 }

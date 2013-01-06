@@ -11,11 +11,6 @@ namespace SQRL.ConsoleTest
 	{
 		private static void Main()
 		{
-			//Database.SetInitializer(new CreateSqrlWithSeedData());
-			//using (var ctx = new SqrlContext()) {
-			//  ctx.Database.Initialize(true);
-			//}
-			//Database.SetInitializer(new MigrateDatabaseToLatestVersion<SqrlContext, Configuration>());
 			//InsertCategory();
 			//InsertLinkUrl();
 			TestNameCategoryConstraint();
@@ -55,8 +50,6 @@ namespace SQRL.ConsoleTest
 				{
 					var link = new UrlLink();
 					link.Name = string.Format("L{0}", link.Id);
-					//					link.Name = string.Format("L{0}", i.ToString().PadLeft(6,'0'));
-					//link.Id = "20pN4";
 					link.LongUrl = string.Format("http://mobile.plantfinder.com/?PlantId={0}&FromTag=true", link.Name);
 					link.Parent = lowes;
 

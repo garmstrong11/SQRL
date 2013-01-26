@@ -1,0 +1,12 @@
+﻿@model IEnumerable<SQRL.Domain.Category>
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+@foreach (var cat in Model) {
+	<div class="item">
+		<h3>@cat.Name</h3>
+		<a href="@cat.LongUrlFormatString">@cat.LongUrlFormatString</a>
+	</div>
+}

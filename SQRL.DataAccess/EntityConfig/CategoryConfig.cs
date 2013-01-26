@@ -7,6 +7,7 @@ namespace SQRL.DataAccess.EntityConfig
 	{
 		public CategoryConfig()
 		{
+			HasMany(p => p.UrlLinks);
 			Property(p => p.Name).IsRequired().HasMaxLength(100);
 			Property(p => p.LongUrlFormatString).HasMaxLength(512);
 		}

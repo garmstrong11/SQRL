@@ -8,12 +8,10 @@ namespace SQRL.DataAccess.EntityConfig
 	{
 		public UrlLinkConfig()
 		{
-			HasKey(p => p.Id);
-			Property(p => p.Id).HasMaxLength(Domain.Properties.Settings.Default.RandomStringLength);
-			Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+			Property(p => p.UrlLinkId).HasMaxLength(Domain.Properties.Settings.Default.RandomStringLength);
+			Property(p => p.UrlLinkId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
 			Property(p => p.LongUrl).HasMaxLength(512);
 			Property(p => p.Name).IsRequired().HasMaxLength(100);
-			Property(p => p.LongUrl).IsRequired();
 		}
 	}
 }

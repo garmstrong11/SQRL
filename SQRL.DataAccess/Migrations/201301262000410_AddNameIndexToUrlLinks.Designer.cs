@@ -5,13 +5,13 @@ namespace SQRL.DataAccess.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class LongUrlFormatStringAddedToCategory : IMigrationMetadata
+    public sealed partial class AddNameIndexToUrlLinks : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(LongUrlFormatStringAddedToCategory));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddNameIndexToUrlLinks));
         
         string IMigrationMetadata.Id
         {
-            get { return "201301062351469_LongUrlFormatStringAddedToCategory"; }
+            get { return "201301262000410_AddNameIndexToUrlLinks"; }
         }
         
         string IMigrationMetadata.Source

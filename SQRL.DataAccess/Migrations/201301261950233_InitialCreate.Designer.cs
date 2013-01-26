@@ -5,13 +5,13 @@ namespace SQRL.DataAccess.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class LongUrlRequired : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(LongUrlRequired));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201301062338589_LongUrlRequired"; }
+            get { return "201301261950233_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

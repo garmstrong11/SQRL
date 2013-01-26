@@ -5,13 +5,13 @@ namespace SQRL.DataAccess.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class AddNameIndexToUrlLinks : IMigrationMetadata
+    public sealed partial class SetIdColumnCaseSensitive : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddNameIndexToUrlLinks));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SetIdColumnCaseSensitive));
         
         string IMigrationMetadata.Id
         {
-            get { return "201301061942526_AddNameIndexToUrlLinks"; }
+            get { return "201301261955361_SetIdColumnCaseSensitive"; }
         }
         
         string IMigrationMetadata.Source

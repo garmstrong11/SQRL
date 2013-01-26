@@ -9,7 +9,7 @@ namespace SQRL.DataAccess.Migrations
 		{
 			var sb = new StringBuilder();
 
-			sb.AppendLine("ALTER TABLE UrlLinks ADD CONSTRAINT UQ_Name_ParentId UNIQUE([Name], [Parent_Id])");
+			sb.AppendLine("ALTER TABLE UrlLinks ADD CONSTRAINT UQ_Name_CategoryId UNIQUE([Name], [CategoryId])");
 			sb.Append("WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, ");
 			sb.AppendLine("IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]");
 
@@ -20,7 +20,7 @@ namespace SQRL.DataAccess.Migrations
 		{
 			var sb = new StringBuilder();
 
-			sb.AppendLine("ALTER TABLE [dbo].[UrlLinks] DROP CONSTRAINT UQ_Name_ParentId");
+			sb.AppendLine("ALTER TABLE [dbo].[UrlLinks] DROP CONSTRAINT UQ_Name_CategoryId");
 
 			Sql(sb.ToString());
 		}

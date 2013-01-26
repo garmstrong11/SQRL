@@ -20,9 +20,9 @@ namespace SQRL.DataAccess.Migrations
 			);
 
 			context.UrlLinks.AddOrUpdate(
-				p => p.Name,
-				new UrlLink { Name = "LLLLL", LongUrl = "http://www.lowes.com", Parent = lowes },
-				new UrlLink { Name = "MMMMM", LongUrl = "http://www.monrovia.com", Parent = monrovia }
+				p => new { p.Name, p.CategoryId },
+				new UrlLink { Name = "LLLLL", LongUrl = "http://www.lowes.com", CategoryId = lowes.CategoryId },
+				new UrlLink { Name = "MMMMM", LongUrl = "http://www.monrovia.com", CategoryId = monrovia.CategoryId }
 			);
 		}
 	}

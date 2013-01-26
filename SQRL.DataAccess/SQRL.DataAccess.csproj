@@ -47,31 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICategoryRepository.cs" />
+    <Compile Include="Concrete\EfCategoryRepository.cs" />
     <Compile Include="EntityConfig\CategoryConfig.cs" />
     <Compile Include="EntityConfig\UrlLinkConfig.cs" />
-    <Compile Include="Migrations\201301061938410_InitialCreate.cs" />
-    <Compile Include="Migrations\201301061938410_InitialCreate.Designer.cs">
-      <DependentUpon>201301061938410_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201301261950233_InitialCreate.cs" />
+    <Compile Include="Migrations\201301261950233_InitialCreate.Designer.cs">
+      <DependentUpon>201301261950233_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201301061941247_SetIdColumnCaseSensitive.cs" />
-    <Compile Include="Migrations\201301061941247_SetIdColumnCaseSensitive.Designer.cs">
-      <DependentUpon>201301061941247_SetIdColumnCaseSensitive.cs</DependentUpon>
+    <Compile Include="Migrations\201301261955361_SetIdColumnCaseSensitive.cs" />
+    <Compile Include="Migrations\201301261955361_SetIdColumnCaseSensitive.Designer.cs">
+      <DependentUpon>201301261955361_SetIdColumnCaseSensitive.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201301061942526_AddNameIndexToUrlLinks.cs" />
-    <Compile Include="Migrations\201301061942526_AddNameIndexToUrlLinks.Designer.cs">
-      <DependentUpon>201301061942526_AddNameIndexToUrlLinks.cs</DependentUpon>
+    <Compile Include="Migrations\201301262000410_AddNameIndexToUrlLinks.cs" />
+    <Compile Include="Migrations\201301262000410_AddNameIndexToUrlLinks.Designer.cs">
+      <DependentUpon>201301262000410_AddNameIndexToUrlLinks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201301061944009_UniqueConstraintOnNameParentId.cs" />
-    <Compile Include="Migrations\201301061944009_UniqueConstraintOnNameParentId.Designer.cs">
-      <DependentUpon>201301061944009_UniqueConstraintOnNameParentId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301062338589_LongUrlRequired.cs" />
-    <Compile Include="Migrations\201301062338589_LongUrlRequired.Designer.cs">
-      <DependentUpon>201301062338589_LongUrlRequired.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301062351469_LongUrlFormatStringAddedToCategory.cs" />
-    <Compile Include="Migrations\201301062351469_LongUrlFormatStringAddedToCategory.Designer.cs">
-      <DependentUpon>201301062351469_LongUrlFormatStringAddedToCategory.cs</DependentUpon>
+    <Compile Include="Migrations\201301262002034_UniqueConstraintOnNameParentId.cs" />
+    <Compile Include="Migrations\201301262002034_UniqueConstraintOnNameParentId.Designer.cs">
+      <DependentUpon>201301262002034_UniqueConstraintOnNameParentId.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,23 +82,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201301061938410_InitialCreate.resx">
-      <DependentUpon>201301061938410_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201301261950233_InitialCreate.resx">
+      <DependentUpon>201301261950233_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301061941247_SetIdColumnCaseSensitive.resx">
-      <DependentUpon>201301061941247_SetIdColumnCaseSensitive.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201301261955361_SetIdColumnCaseSensitive.resx">
+      <DependentUpon>201301261955361_SetIdColumnCaseSensitive.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301061942526_AddNameIndexToUrlLinks.resx">
-      <DependentUpon>201301061942526_AddNameIndexToUrlLinks.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201301262000410_AddNameIndexToUrlLinks.resx">
+      <DependentUpon>201301262000410_AddNameIndexToUrlLinks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301061944009_UniqueConstraintOnNameParentId.resx">
-      <DependentUpon>201301061944009_UniqueConstraintOnNameParentId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301062338589_LongUrlRequired.resx">
-      <DependentUpon>201301062338589_LongUrlRequired.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301062351469_LongUrlFormatStringAddedToCategory.resx">
-      <DependentUpon>201301062351469_LongUrlFormatStringAddedToCategory.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201301262002034_UniqueConstraintOnNameParentId.resx">
+      <DependentUpon>201301262002034_UniqueConstraintOnNameParentId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

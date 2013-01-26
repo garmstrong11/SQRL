@@ -11,31 +11,32 @@ namespace SQRL.DataAccess.Migrations
                 "dbo.Categories",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        CategoryId = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 100),
+                        LongUrlFormatString = c.String(maxLength: 512),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.CategoryId);
             
             CreateTable(
                 "dbo.UrlLinks",
                 c => new
                     {
-                        Id = c.String(nullable: false, maxLength: 5),
+                        UrlLinkId = c.String(nullable: false, maxLength: 5),
                         Name = c.String(nullable: false, maxLength: 100),
                         LongUrl = c.String(maxLength: 512),
+                        CategoryId = c.Int(nullable: false),
                         Created = c.DateTime(nullable: false),
-                        Parent_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Categories", t => t.Parent_Id)
-                .Index(t => t.Parent_Id);
+                .PrimaryKey(t => t.UrlLinkId)
+                .ForeignKey("dbo.Categories", t => t.CategoryId, cascadeDelete: true)
+                .Index(t => t.CategoryId);
             
         }
         
         public override void Down()
         {
-            DropIndex("dbo.UrlLinks", new[] { "Parent_Id" });
-            DropForeignKey("dbo.UrlLinks", "Parent_Id", "dbo.Categories");
+            DropIndex("dbo.UrlLinks", new[] { "CategoryId" });
+            DropForeignKey("dbo.UrlLinks", "CategoryId", "dbo.Categories");
             DropTable("dbo.UrlLinks");
             DropTable("dbo.Categories");
         }

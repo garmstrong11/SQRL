@@ -22,7 +22,7 @@ namespace SQRL.ConsoleTest
 			using (var ctx = new SqrlContext())
 			{
 				var lowes = ctx.Categories.FirstOrDefault(c => c.Name == "Lowes");
-				var link = new UrlLink { Name = "LLLLL", Parent = lowes };
+				var link = new UrlLink { Name = "LLLLL", Category = lowes };
 
 				ctx.UrlLinks.Add(link);
 				//ctx.SaveChanges();
@@ -49,13 +49,13 @@ namespace SQRL.ConsoleTest
 				for (var i = 0; i < 10; i++)
 				{
 					var link = new UrlLink();
-					link.Name = string.Format("L{0}", link.Id);
+					link.Name = string.Format("L{0}", link.UrlLinkId);
 					link.LongUrl = string.Format("http://mobile.plantfinder.com/?PlantId={0}&FromTag=true", link.Name);
-					link.Parent = lowes;
+					link.Category = lowes;
 
-					while (ctx.UrlLinks.Any(u => u.Id == link.Id))
+					while (ctx.UrlLinks.Any(u => u.UrlLinkId == link.UrlLinkId))
 					{
-						link.Id = RandomGen.RandomString(SQRL.Domain.Properties.Settings.Default.RandomStringLength);
+						link.UrlLinkId = RandomGen.RandomString(SQRL.Domain.Properties.Settings.Default.RandomStringLength);
 					}
 
 					ctx.UrlLinks.Add(link);
@@ -84,9 +84,9 @@ namespace SQRL.ConsoleTest
 				{
 					var link = new UrlLink();
 					link.Name = string.Format("L{0}", i.ToString(CultureInfo.InvariantCulture).PadLeft(5, '0'));
-					link.Id = "20pN4";
+					link.UrlLinkId = "20pN4";
 					link.LongUrl = string.Format("http://mobile.plantfinder.com/?PlantId={0}&FromTag=true", link.Name);
-					link.Parent = lowes;
+					link.Category = lowes;
 					ctx.UrlLinks.Add(link);
 					var valErrors = ctx.GetValidationErrors();
 					if (!valErrors.Any())

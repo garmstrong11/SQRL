@@ -12,18 +12,42 @@ namespace SQRL.DataAccess.Migrations
 
 		protected override void Seed(SqrlContext context)
 		{
-			var lowes = new Category { Name = "Lowes" };
-			var monrovia = new Category { Name = "Monrovia" };
+			const string nameL = "L5450";
+			const string nameM = "MLN20527";
+
+			var lowes = new Category {
+				Name = "Lowes",
+				LongUrlFormatString = "http://plantguide.lowes.com/mobile/plant.aspx?code={0}&fromTag=true"
+			};
+
+			var mapleleaf = new Category {
+				Name = "Mapleleaf",
+				LongUrlFormatString = "http://mapleleaf.hortmp.com/mobile/plant.aspx?code={0}"
+			};
 
 			context.Categories.AddOrUpdate(
-				p => p.Name, new[] { lowes, monrovia }
+				p => p.Name, new[] { lowes, mapleleaf }
 			);
+
+			context.SaveChanges();
 
 			context.UrlLinks.AddOrUpdate(
 				p => new { p.Name, p.CategoryId },
-				new UrlLink { Name = "LLLLL", LongUrl = "http://www.lowes.com", CategoryId = lowes.CategoryId },
-				new UrlLink { Name = "MMMMM", LongUrl = "http://www.monrovia.com", CategoryId = monrovia.CategoryId }
+				new UrlLink
+				{
+					Name = nameL,
+					LongUrl = string.Format(lowes.LongUrlFormatString, nameL),
+					CategoryId = lowes.CategoryId
+				},
+				new UrlLink
+				{
+					Name = nameM,
+					LongUrl = string.Format(mapleleaf.LongUrlFormatString, nameM),
+					CategoryId = mapleleaf.CategoryId
+				}
 			);
+
+			context.SaveChanges();
 		}
 	}
 }

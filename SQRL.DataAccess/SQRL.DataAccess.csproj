@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICategoryRepository.cs" />
+    <Compile Include="Abstract\IUrlLinkRepository.cs" />
     <Compile Include="Concrete\EfCategoryRepository.cs" />
+    <Compile Include="Concrete\EfUrlLinkRepository.cs" />
     <Compile Include="EntityConfig\CategoryConfig.cs" />
     <Compile Include="EntityConfig\UrlLinkConfig.cs" />
     <Compile Include="Migrations\201301261950233_InitialCreate.cs" />

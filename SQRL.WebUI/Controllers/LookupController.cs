@@ -1,28 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using SQRL.DataAccess.Abstract;
 
 namespace SQRL.WebUI.Controllers
 {
 	public class LookupController : Controller
 	{
-		//
-		// GET: /Lookup/
+		private readonly IUrlLinkRepository _repository;
+
+		public LookupController(IUrlLinkRepository repository)
+		{
+			_repository = repository;
+		}
 
 		public ActionResult Index(string id)
 		{
-			var siteDict = new Dictionary<string, string>(StringComparer.Ordinal) {
-				{"ABCDE", "http://www.amazon.com"},
-				{"AbCDE", "http://www.integracolor.com"},
-				{"BC9EF", "http://www.google.com"},
-				{"SQRLE", "http://localhost:50082/Home/Index"}
-			};
+			//var siteDict = new Dictionary<string, string>(StringComparer.Ordinal) {
+			//  {"ABCDE", "http://www.amazon.com"},
+			//  {"AbCDE", "http://www.integracolor.com"},
+			//  {"BC9EF", "http://www.google.com"},
+			//  {"SQRLE", "http://localhost:50082/Home/Index"}
+			//};
 
-			if (siteDict.ContainsKey(id)) {
-				return RedirectPermanent(siteDict[id]);
-			}
+			//if (siteDict.ContainsKey(id)) {
+			//  return RedirectPermanent(siteDict[id]);
+			//}
 
-			return HttpNotFound();
+			//return HttpNotFound();
+			return RedirectPermanent(_repository.GetUrlById(id));
 		}
 	}
 }

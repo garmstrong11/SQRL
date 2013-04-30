@@ -62,13 +62,8 @@ namespace SQRL.WebUI.App_Start
 		/// <param name="kernel">The kernel.</param>
 		private static void RegisterServices(IKernel kernel)
 		{
-			//var mock = new Mock<ICategoryRepository>();
-			//mock.Setup(m => m.Categories).Returns(new List<Category> {
-			//  new Category {Name = "TestCat1", Id = 1, LongUrlFormatString = "http://www.Amazon.com"},
-			//  new Category {Name = "TestCat2", Id = 2, LongUrlFormatString = "http://www.google.com"}
-			//}.AsQueryable());
-
 			kernel.Bind<ICategoryRepository>().To<EfCategoryRepository>();
+			kernel.Bind<IUrlLinkRepository>().To<EfUrlLinkRepository>();
 		}
 	}
 }
